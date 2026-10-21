@@ -28,7 +28,7 @@ Trang giao diện thương mại điện tử cho thương hiệu **Cocoon Vietn
 - JavaScript thuần (không dùng thư viện bên ngoài)
 
 ## 5. Cách chạy
-Mở file `.html` bằng trình duyệt (nhấp đúp vào file hoặc kéo thả vào cửa sổ trình duyệt).
+Mở file `index.html` bằng trình duyệt (nhấp đúp vào file hoặc kéo thả vào cửa sổ trình duyệt).
 
 ## 6. Cải tiến đã thực hiện
 
