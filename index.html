@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocoon Vietnam – Mỹ Phẩm Thuần Chay</title>
+    <title>Cocoon Vietnam – Mỹ Phẩm Thuần Chay | Bài Tập Cá Nhân Buổi 2</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ====== THANH THÔNG BÁO ====== -->
+    <!-- ====== THANH THÔNG BÁO (TOP BAR) ====== -->
     <div class="top-bar">
-        Miễn phí giao hàng cho đơn từ 99.000&nbsp;đ &bull; 100% Thuần Chay
+        Miễn phí giao hàng cho đơn từ 99.000&nbsp;đ &bull; 100% Thuần Chay Thực Vật Việt Nam
     </div>
 
-    <!-- ====== HEADER ====== -->
+    <!-- ====== HEADER VÀ MENU ĐIỀU HƯỚNG (FLEXBOX) ====== -->
     <header class="site-header">
         <div class="container header-inner">
             <a href="#" class="logo">🌿 Cocoon Vietnam</a>
 
-            <!-- Hamburger cho mobile -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
+            <!-- Nút bật/tắt menu trên thiết bị di động -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Mở menu điều hướng">☰</button>
 
-            <nav class="main-nav" id="mainNav">
-                <ul>
+            <!-- Menu điều hướng chính -->
+            <nav class="main-nav" id="mainNav" aria-label="Điều hướng chính của trang">
+                <ul class="nav-list">
                     <li><a href="#san-pham-ban-chay">Bán chạy</a></li>
                     <li><a href="#san-pham-moi">Sản phẩm mới</a></li>
                     <li><a href="#danh-muc">Danh mục</a></li>
@@ -29,358 +30,386 @@
                 </ul>
             </nav>
 
-            <!-- Tìm kiếm cải tiến: có gợi ý khi gõ -->
+            <!-- Ô tìm kiếm cải tiến với danh sách gợi ý từ khóa -->
             <div class="header-search">
-                <input type="text" id="searchInput" placeholder="Tìm sữa rửa mặt, gel tắm…" autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Tìm sữa rửa mặt, gel tắm…" autocomplete="off" aria-label="Tìm kiếm sản phẩm">
                 <div class="search-suggestions" id="searchSuggestions">
                     <p class="suggestion-label">Gợi ý tìm kiếm:</p>
-                    <a href="#">Sữa rửa mặt</a>
-                    <a href="#">Nước tẩy trang</a>
-                    <a href="#">Gel tắm bí đao</a>
-                    <a href="#">Son dưỡng môi</a>
+                    <a href="#san-pham-ban-chay">Sữa rửa mặt sen</a>
+                    <a href="#san-pham-ban-chay">Nước tẩy trang hoa hồng</a>
+                    <a href="#san-pham-ban-chay">Gel tắm bí đao</a>
+                    <a href="#san-pham-ban-chay">Son dưỡng dầu dừa</a>
                 </div>
             </div>
 
-            <!-- Giỏ hàng mini -->
+            <!-- Giỏ hàng mini và thông báo toast -->
             <div class="header-cart">
-                <button class="cart-btn" id="cartBtn" aria-label="Giỏ hàng">
+                <button class="cart-btn" id="cartBtn" aria-label="Xem giỏ hàng">
                     🛒 <span class="cart-count" id="cartCount">0</span>
                 </button>
-                <!-- Thông báo khi thêm vào giỏ (cải tiến giỏ hàng) -->
-                <div class="cart-toast" id="cartToast">
+                <div class="cart-toast" id="cartToast" role="alert">
                     ✅ Đã thêm vào giỏ hàng!
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ====== HERO BANNER ====== -->
-    <section class="hero">
-        <div class="container">
-            <h1>Mỹ phẩm thuần chay<br>từ thực vật Việt Nam</h1>
-            <p>Không nguồn gốc động vật · Không thử nghiệm trên động vật</p>
-            <a href="#san-pham-ban-chay" class="btn btn-primary">Xem sản phẩm bán chạy</a>
-        </div>
-    </section>
+    <!-- ====== NỘI DUNG CHÍNH (MAIN ELEMENT THEO CHUẨN HTML5) ====== -->
+    <main id="main-content">
 
-    <!-- ====== LỐI VÀO THEO VẤN ĐỀ DA / TÓC (cải tiến: đưa lên cao) ====== -->
-    <section class="skin-concerns" id="danh-muc">
-        <div class="container">
-            <h2>Chọn theo nhu cầu của bạn</h2>
-            <div class="concerns-grid">
-                <a href="#" class="concern-card">
-                    <span class="concern-icon">💧</span>
-                    <span>Da khô</span>
-                </a>
-                <a href="#" class="concern-card">
-                    <span class="concern-icon">✨</span>
-                    <span>Da dầu / mụn</span>
-                </a>
-                <a href="#" class="concern-card">
-                    <span class="concern-icon">🌸</span>
-                    <span>Da nhạy cảm</span>
-                </a>
-                <a href="#" class="concern-card">
-                    <span class="concern-icon">🧴</span>
-                    <span>Chống nắng</span>
-                </a>
-                <a href="#" class="concern-card">
-                    <span class="concern-icon">💆</span>
-                    <span>Rụng tóc</span>
-                </a>
-                <a href="#" class="concern-card">
-                    <span class="concern-icon">🪷</span>
-                    <span>Dưỡng ẩm</span>
-                </a>
+        <!-- ====== KHU VỰC HERO BANNER ====== -->
+        <section class="hero">
+            <div class="container">
+                <h1>Mỹ phẩm thuần chay<br>từ thực vật Việt Nam</h1>
+                <p>Không nguồn gốc động vật &middot; Không thử nghiệm trên động vật &middot; 100% Thuần chay</p>
+                <a href="#san-pham-ban-chay" class="btn btn-primary">Xem sản phẩm bán chạy</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ====== SẢN PHẨM BÁN CHẠY (cải tiến: đưa lên trước nội dung thương hiệu) ====== -->
-    <section class="products-section" id="san-pham-ban-chay">
-        <div class="container">
-            <h2>Sản phẩm bán chạy</h2>
-
-            <!-- Bộ lọc & sắp xếp (cải tiến danh mục) -->
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <label for="filterSkin">Loại da:</label>
-                    <select id="filterSkin">
-                        <option value="all">Tất cả</option>
-                        <option value="da-dau">Da dầu</option>
-                        <option value="da-kho">Da khô</option>
-                        <option value="da-nhay-cam">Da nhạy cảm</option>
-                        <option value="moi-loai-da">Mọi loại da</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="sortBy">Sắp xếp:</label>
-                    <select id="sortBy">
-                        <option value="ban-chay">Bán chạy nhất</option>
-                        <option value="gia-tang">Giá tăng dần</option>
-                        <option value="gia-giam">Giá giảm dần</option>
-                    </select>
+        <!-- ====== KHU VỰC CHỌN THEO NHU CẦU DA / TÓC ====== -->
+        <section class="skin-concerns" id="danh-muc">
+            <div class="container">
+                <h2>Chọn theo nhu cầu của bạn</h2>
+                <div class="concerns-grid">
+                    <a href="#san-pham-ban-chay" class="concern-card">
+                        <span class="concern-icon">💧</span>
+                        <span>Da khô</span>
+                    </a>
+                    <a href="#san-pham-ban-chay" class="concern-card">
+                        <span class="concern-icon">✨</span>
+                        <span>Da dầu / mụn</span>
+                    </a>
+                    <a href="#san-pham-ban-chay" class="concern-card">
+                        <span class="concern-icon">🌸</span>
+                        <span>Da nhạy cảm</span>
+                    </a>
+                    <a href="#san-pham-ban-chay" class="concern-card">
+                        <span class="concern-icon">🧴</span>
+                        <span>Chống nắng</span>
+                    </a>
+                    <a href="#san-pham-ban-chay" class="concern-card">
+                        <span class="concern-icon">💆</span>
+                        <span>Rụng tóc</span>
+                    </a>
+                    <a href="#san-pham-ban-chay" class="concern-card">
+                        <span class="concern-icon">🪷</span>
+                        <span>Dưỡng ẩm</span>
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <!-- Lưới sản phẩm -->
-            <div class="products-grid">
+        <!-- ====== DANH SÁCH SẢN PHẨM TRỌNG TÂM (CSS GRID & BOX MODEL) ====== -->
+        <section class="products-section" id="san-pham-ban-chay">
+            <div class="container">
+                <h2>Sản phẩm bán chạy</h2>
+                <p class="section-subtitle">Chăm sóc dịu nhẹ từ nguồn nguyên liệu đặc sản thiên nhiên Việt Nam</p>
 
-                <!-- SẢN PHẨM 1 -->
-                <article class="product-card" data-skin="moi-loai-da" data-price="165000" data-sold="25000">
-                    <div class="product-img">
-                        <img src="image/sua-rua-mat-sen.jpg"
-                             alt="Sữa rửa mặt sen Hậu Giang"
-                             onerror="this.style.display='none'; this.parentElement.classList.add('img-placeholder');">
-                        <span class="badge badge-bestseller">Bán chạy</span>
+                <!-- Thanh lọc và sắp xếp sản phẩm (Flexbox) -->
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label for="filterSkin">Loại da:</label>
+                        <select id="filterSkin">
+                            <option value="all">Tất cả</option>
+                            <option value="da-dau">Da dầu</option>
+                            <option value="da-kho">Da khô</option>
+                            <option value="da-nhay-cam">Da nhạy cảm</option>
+                            <option value="moi-loai-da">Mọi loại da</option>
+                        </select>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Sữa rửa mặt sen Hậu Giang</h3>
-                        <p class="product-desc">Làm sạch dịu nhẹ, không chứa sulfate</p>
-                        <div class="product-tags">
-                            <span class="tag">Mọi loại da</span>
-                            <span class="tag">Không sulfate</span>
-                        </div>
+                    <div class="filter-group">
+                        <label for="sortBy">Sắp xếp:</label>
+                        <select id="sortBy">
+                            <option value="ban-chay">Bán chạy nhất</option>
+                            <option value="gia-tang">Giá tăng dần</option>
+                            <option value="gia-giam">Giá giảm dần</option>
+                        </select>
+                    </div>
+                </div>
 
-                        <!-- Bộ chọn dung tích (cải tiến: gộp dung tích vào 1 thẻ) -->
-                        <div class="volume-selector">
-                            <button class="vol-btn active" data-price="165000">140ml</button>
-                            <button class="vol-btn" data-price="310000">310ml</button>
-                            <button class="vol-btn" data-price="495000">500ml</button>
-                        </div>
+                <!-- Lưới danh sách sản phẩm (CSS Grid) -->
+                <div class="products-grid">
 
-                        <div class="product-bottom">
-                            <div class="price-sold">
-                                <span class="product-price">165.000&nbsp;đ</span>
-                                <span class="product-sold">Đã bán 25.000+</span>
+                    <!-- SẢN PHẨM 1 -->
+                    <article class="product-card" data-skin="moi-loai-da" data-price="165000" data-sold="25000">
+                        <div class="product-img">
+                            <img src="images/sua-rua-mat-sen.jpg"
+                                 alt="Sữa rửa mặt sen Hậu Giang Cocoon làm dịu da nhạy cảm"
+                                 loading="lazy">
+                            <span class="badge badge-bestseller">Bán chạy</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Sữa rửa mặt sen Hậu Giang</h3>
+                            <p class="product-desc">Làm sạch dịu nhẹ, không chứa sulfate, giữ ẩm tự nhiên</p>
+                            <div class="product-tags">
+                                <span class="tag">Mọi loại da</span>
+                                <span class="tag">Không sulfate</span>
                             </div>
-                            <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- SẢN PHẨM 2 -->
-                <article class="product-card" data-skin="da-dau" data-price="158000" data-sold="18000">
-                    <div class="product-img">
-                        <img src="image/gel-rua-mat-bi-dao.jpg"
-                             alt="Gel rửa mặt bí đao"
-                             onerror="this.style.display='none'; this.parentElement.classList.add('img-placeholder');">
-                        <span class="badge badge-bestseller">Bán chạy</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Gel rửa mặt bí đao</h3>
-                        <p class="product-desc">Kiểm soát dầu, se khít lỗ chân lông</p>
-                        <div class="product-tags">
-                            <span class="tag">Da dầu</span>
-                            <span class="tag">Không cồn</span>
-                        </div>
-                        <div class="volume-selector">
-                            <button class="vol-btn active" data-price="158000">140ml</button>
-                            <button class="vol-btn" data-price="295000">310ml</button>
-                        </div>
-                        <div class="product-bottom">
-                            <div class="price-sold">
-                                <span class="product-price">158.000&nbsp;đ</span>
-                                <span class="product-sold">Đã bán 18.000+</span>
+                            <!-- Bộ chọn dung tích (gộp dung tích vào 1 thẻ) -->
+                            <div class="volume-selector">
+                                <button class="vol-btn active" data-price="165000" aria-label="Chọn dung tích 140ml">140ml</button>
+                                <button class="vol-btn" data-price="310000" aria-label="Chọn dung tích 310ml">310ml</button>
+                                <button class="vol-btn" data-price="495000" aria-label="Chọn dung tích 500ml">500ml</button>
                             </div>
-                            <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- SẢN PHẨM 3 -->
-                <article class="product-card" data-skin="da-nhay-cam" data-price="175000" data-sold="12000">
-                    <div class="product-img">
-                        <img src="image/nuoc-tay-trang-hoa-hong.jpg"
-                             alt="Nước tẩy trang hoa hồng"
-                             onerror="this.style.display='none'; this.parentElement.classList.add('img-placeholder');">
-                        <span class="badge badge-new">Mới</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Nước tẩy trang hoa hồng</h3>
-                        <p class="product-desc">Tẩy trang dịu nhẹ, không gây kích ứng</p>
-                        <div class="product-tags">
-                            <span class="tag">Da nhạy cảm</span>
-                            <span class="tag">Không paraben</span>
-                        </div>
-                        <div class="volume-selector">
-                            <button class="vol-btn active" data-price="175000">140ml</button>
-                            <button class="vol-btn" data-price="320000">310ml</button>
-                            <button class="vol-btn" data-price="520000">500ml</button>
-                        </div>
-                        <div class="product-bottom">
-                            <div class="price-sold">
-                                <span class="product-price">175.000&nbsp;đ</span>
-                                <span class="product-sold">Đã bán 12.000+</span>
+                            <div class="product-bottom">
+                                <div class="price-sold">
+                                    <span class="product-price">165.000&nbsp;đ</span>
+                                    <span class="product-sold">Đã bán 25.000+</span>
+                                </div>
+                                <!-- Nhóm nút thao tác (Flexbox) -->
+                                <div class="product-actions">
+                                    <a href="#product-detail" class="btn-detail" onclick="openDetailModal('Sữa rửa mặt sen Hậu Giang', '165.000 đ', 'images/sua-rua-mat-sen.jpg', 'Làm sạch dịu nhẹ, giữ ẩm tự nhiên và không gây cảm giác khô căng nhờ chiết xuất hoa sen Hậu Giang kết hợp Madecassoside.'); return false;">Xem chi tiết</a>
+                                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
+                                </div>
                             </div>
-                            <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- SẢN PHẨM 4 -->
-                <article class="product-card" data-skin="moi-loai-da" data-price="123000" data-sold="30000">
-                    <div class="product-img">
-                        <img src="image/gel-tam-bi-dao.jpg"
-                             alt="Gel tắm bí đao"
-                             onerror="this.style.display='none'; this.parentElement.classList.add('img-placeholder');">
-                        <span class="badge badge-bestseller">Bán chạy</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Gel tắm bí đao</h3>
-                        <p class="product-desc">Dưỡng ẩm, làm sáng da, hương thảo mộc</p>
-                        <div class="product-tags">
-                            <span class="tag">Mọi loại da</span>
-                            <span class="tag">Thuần chay</span>
+                    <!-- SẢN PHẨM 2 -->
+                    <article class="product-card" data-skin="da-dau" data-price="158000" data-sold="18000">
+                        <div class="product-img">
+                            <img src="images/gel-rua-mat-bi-dao.jpg"
+                                 alt="Gel rửa mặt bí đao Cocoon kiểm soát dầu và giảm mụn"
+                                 loading="lazy">
+                            <span class="badge badge-bestseller">Bán chạy</span>
                         </div>
-                        <div class="volume-selector">
-                            <button class="vol-btn active" data-price="123000">310ml</button>
-                            <button class="vol-btn" data-price="195000">500ml</button>
-                            <button class="vol-btn" data-price="320000">1000ml</button>
-                        </div>
-                        <div class="product-bottom">
-                            <div class="price-sold">
-                                <span class="product-price">123.000&nbsp;đ</span>
-                                <span class="product-sold">Đã bán 30.000+</span>
+                        <div class="product-info">
+                            <h3 class="product-title">Gel rửa mặt bí đao</h3>
+                            <p class="product-desc">Kiểm soát dầu thừa, se khít lỗ chân lông và ngừa mụn</p>
+                            <div class="product-tags">
+                                <span class="tag">Da dầu</span>
+                                <span class="tag">Không cồn</span>
                             </div>
-                            <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- SẢN PHẨM 5 -->
-                <article class="product-card" data-skin="da-kho" data-price="235000" data-sold="9000">
-                    <div class="product-img">
-                        <img src="image/kem-duong-ca-phe-dak-lak.jpg"
-                             alt="Kem dưỡng cà phê Đắk Lắk"
-                             onerror="this.style.display='none'; this.parentElement.classList.add('img-placeholder');">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Kem dưỡng ẩm cà phê Đắk Lắk</h3>
-                        <p class="product-desc">Cấp ẩm sâu, phục hồi da khô</p>
-                        <div class="product-tags">
-                            <span class="tag">Da khô</span>
-                            <span class="tag">Không dầu khoáng</span>
-                        </div>
-                        <div class="volume-selector">
-                            <button class="vol-btn active" data-price="235000">30ml</button>
-                            <button class="vol-btn" data-price="395000">50ml</button>
-                        </div>
-                        <div class="product-bottom">
-                            <div class="price-sold">
-                                <span class="product-price">235.000&nbsp;đ</span>
-                                <span class="product-sold">Đã bán 9.000+</span>
+                            <div class="volume-selector">
+                                <button class="vol-btn active" data-price="158000" aria-label="Chọn dung tích 140ml">140ml</button>
+                                <button class="vol-btn" data-price="295000" aria-label="Chọn dung tích 310ml">310ml</button>
                             </div>
-                            <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- SẢN PHẨM 6 -->
-                <article class="product-card" data-skin="moi-loai-da" data-price="89000" data-sold="15000">
-                    <div class="product-img">
-                        <img src="image/son-duong-dau-dua.jpg"
-                             alt="Son dưỡng dầu dừa Bến Tre"
-                             onerror="this.style.display='none'; this.parentElement.classList.add('img-placeholder');">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Son dưỡng dầu dừa Bến Tre</h3>
-                        <p class="product-desc">Dưỡng ẩm, mềm mịn môi suốt ngày</p>
-                        <div class="product-tags">
-                            <span class="tag">Mọi loại da</span>
-                            <span class="tag">Thuần chay</span>
-                        </div>
-                        <div class="volume-selector">
-                            <button class="vol-btn active" data-price="89000">5g</button>
-                        </div>
-                        <div class="product-bottom">
-                            <div class="price-sold">
-                                <span class="product-price">89.000&nbsp;đ</span>
-                                <span class="product-sold">Đã bán 15.000+</span>
+                            <div class="product-bottom">
+                                <div class="price-sold">
+                                    <span class="product-price">158.000&nbsp;đ</span>
+                                    <span class="product-sold">Đã bán 18.000+</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#product-detail" class="btn-detail" onclick="openDetailModal('Gel rửa mặt bí đao', '158.000 đ', 'images/gel-rua-mat-bi-dao.jpg', 'Công thức kết hợp bí đao, rau má và tràm trà cùng BHA giúp làm sạch sâu lỗ chân lông, kiềm dầu và làm dịu nốt mụn.'); return false;">Xem chi tiết</a>
+                                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
+                                </div>
                             </div>
-                            <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-            </div>
-        </div>
-    </section>
+                    <!-- SẢN PHẨM 3 -->
+                    <article class="product-card" data-skin="da-nhay-cam" data-price="175000" data-sold="12000">
+                        <div class="product-img">
+                            <img src="images/nuoc-tay-trang-hoa-hong.jpg"
+                                 alt="Nước tẩy trang hoa hồng Cocoon dịu nhẹ cấp ẩm"
+                                 loading="lazy">
+                            <span class="badge badge-new">Mới</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Nước tẩy trang hoa hồng</h3>
+                            <p class="product-desc">Tẩy sạch lớp trang điểm dịu nhẹ, không gây cay mắt</p>
+                            <div class="product-tags">
+                                <span class="tag">Da nhạy cảm</span>
+                                <span class="tag">Không paraben</span>
+                            </div>
+                            <div class="volume-selector">
+                                <button class="vol-btn active" data-price="175000" aria-label="Chọn dung tích 140ml">140ml</button>
+                                <button class="vol-btn" data-price="320000" aria-label="Chọn dung tích 310ml">310ml</button>
+                                <button class="vol-btn" data-price="520000" aria-label="Chọn dung tích 500ml">500ml</button>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="price-sold">
+                                    <span class="product-price">175.000&nbsp;đ</span>
+                                    <span class="product-sold">Đã bán 12.000+</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#product-detail" class="btn-detail" onclick="openDetailModal('Nước tẩy trang hoa hồng', '175.000 đ', 'images/nuoc-tay-trang-hoa-hong.jpg', 'Nước cất hoa hồng hữu cơ kết hợp phân tử Micellar dịu nhẹ giúp lau sạch bã nhờn, bụi bẩn mà vẫn ẩm mượt làn da.'); return false;">Xem chi tiết</a>
+                                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-    <!-- ====== GỢI Ý SẢN PHẨM DÙNG KÈM (cải tiến chi tiết sản phẩm) ====== -->
-    <section class="products-section section-alt" id="san-pham-moi">
-        <div class="container">
-            <h2>Thường được mua cùng</h2>
-            <p class="section-subtitle">Gợi ý bộ sản phẩm chăm sóc hoàn chỉnh</p>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <div class="combo-img img-placeholder"></div>
-                    <h4>Bộ chăm sóc da dầu</h4>
-                    <p>Gel rửa mặt bí đao + Nước cân bằng + Kem dưỡng</p>
-                    <span class="combo-price">Tiết kiệm 15% – 480.000&nbsp;đ</span>
-                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm bộ vào giỏ</button>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-img img-placeholder"></div>
-                    <h4>Travel Kit – Chăm sóc da</h4>
-                    <p>5 sản phẩm mini, tiện mang theo</p>
-                    <span class="combo-price">Chỉ 250.000&nbsp;đ</span>
-                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- SẢN PHẨM 4 -->
+                    <article class="product-card" data-skin="moi-loai-da" data-price="123000" data-sold="30000">
+                        <div class="product-img">
+                            <img src="images/gel-tam-bi-dao.jpg"
+                                 alt="Gel tắm bí đao Cocoon giảm mụn lưng dưỡng ẩm cơ thể"
+                                 loading="lazy">
+                            <span class="badge badge-bestseller">Bán chạy</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Gel tắm bí đao</h3>
+                            <p class="product-desc">Dưỡng ẩm, làm sạch mụn lưng với hương thơm thảo mộc</p>
+                            <div class="product-tags">
+                                <span class="tag">Mọi loại da</span>
+                                <span class="tag">Thuần chay</span>
+                            </div>
+                            <div class="volume-selector">
+                                <button class="vol-btn active" data-price="123000" aria-label="Chọn dung tích 310ml">310ml</button>
+                                <button class="vol-btn" data-price="195000" aria-label="Chọn dung tích 500ml">500ml</button>
+                                <button class="vol-btn" data-price="320000" aria-label="Chọn dung tích 1000ml">1000ml</button>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="price-sold">
+                                    <span class="product-price">123.000&nbsp;đ</span>
+                                    <span class="product-sold">Đã bán 30.000+</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#product-detail" class="btn-detail" onclick="openDetailModal('Gel tắm bí đao', '123.000 đ', 'images/gel-tam-bi-dao.jpg', 'Chiết xuất bí đao tự nhiên hỗ trợ kháng khuẩn, làm sạch sâu lỗ chân lông cơ thể và giảm mụn lưng hiệu quả.'); return false;">Xem chi tiết</a>
+                                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-    <!-- ====== VỀ COCOON (đã chuyển xuống dưới theo đề xuất) ====== -->
-    <section class="about-section" id="ve-cocoon">
-        <div class="container">
-            <h2>Về Cocoon Vietnam</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <span class="about-icon">🌱</span>
-                    <h3>100% Thuần Chay</h3>
-                    <p>Nguyên liệu từ thực vật Việt Nam, không nguồn gốc động vật.</p>
-                </div>
-                <div class="about-card">
-                    <span class="about-icon">🐰</span>
-                    <h3>Cruelty-Free</h3>
-                    <p>Không thử nghiệm trên động vật, chứng nhận quốc tế.</p>
-                </div>
-                <div class="about-card">
-                    <span class="about-icon">🇻🇳</span>
-                    <h3>Nguyên Liệu Việt</h3>
-                    <p>Cà phê Đắk Lắk, bí đao, sen Hậu Giang, dầu dừa Bến Tre.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- SẢN PHẨM 5 -->
+                    <article class="product-card" data-skin="da-kho" data-price="235000" data-sold="9000">
+                        <div class="product-img">
+                            <img src="images/kem-duong-ca-phe-dak-lak.jpg"
+                                 alt="Kem dưỡng ẩm cà phê Đắk Lắk Cocoon phục hồi chuyên sâu"
+                                 loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kem dưỡng ẩm cà phê Đắk Lắk</h3>
+                            <p class="product-desc">Cấp ẩm sâu 24 giờ, phục hồi làn da khô ráp nứt nẻ</p>
+                            <div class="product-tags">
+                                <span class="tag">Da khô</span>
+                                <span class="tag">Không dầu khoáng</span>
+                            </div>
+                            <div class="volume-selector">
+                                <button class="vol-btn active" data-price="235000" aria-label="Chọn dung tích 30ml">30ml</button>
+                                <button class="vol-btn" data-price="395000" aria-label="Chọn dung tích 50ml">50ml</button>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="price-sold">
+                                    <span class="product-price">235.000&nbsp;đ</span>
+                                    <span class="product-sold">Đã bán 9.000+</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#product-detail" class="btn-detail" onclick="openDetailModal('Kem dưỡng ẩm cà phê Đắk Lắk', '235.000 đ', 'images/kem-duong-ca-phe-dak-lak.jpg', 'Dầu cà phê Đắk Lắk nguyên chất kết hợp bơ ca cao giúp khóa ẩm, chống oxy hóa và cải thiện độ đàn hồi cho da.'); return false;">Xem chi tiết</a>
+                                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-    <!-- ====== ĐÁNH GIÁ KHÁCH HÀNG (cải tiến: khuyến khích đánh giá) ====== -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>Khách hàng nói gì</h2>
-            <p class="section-subtitle">Đánh giá thực từ người dùng &middot; <a href="#">Viết đánh giá của bạn</a></p>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Sữa rửa mặt sen rất dịu, da mình không bị khô căng sau khi rửa."</p>
-                    <span class="reviewer">— Minh Anh, Da nhạy cảm</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Gel tắm bí đao mùi thơm tự nhiên, dùng cả nhà đều thích."</p>
-                    <span class="reviewer">— Thanh Hà, Mọi loại da</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">⭐⭐⭐⭐</div>
-                    <p>"Kem dưỡng cà phê thấm nhanh, da mềm mịn hơn sau 1 tuần."</p>
-                    <span class="reviewer">— Thu Trang, Da khô</span>
+                    <!-- SẢN PHẨM 6 -->
+                    <article class="product-card" data-skin="moi-loai-da" data-price="89000" data-sold="15000">
+                        <div class="product-img">
+                            <img src="images/son-duong-dau-dua.jpg"
+                                 alt="Son dưỡng dầu dừa Bến Tre Cocoon mềm mịn môi"
+                                 loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Son dưỡng dầu dừa Bến Tre</h3>
+                            <p class="product-desc">Dưỡng ẩm mềm môi suốt cả ngày, chống thâm môi</p>
+                            <div class="product-tags">
+                                <span class="tag">Mọi loại da</span>
+                                <span class="tag">Thuần chay</span>
+                            </div>
+                            <div class="volume-selector">
+                                <button class="vol-btn active" data-price="89000" aria-label="Chọn trọng lượng 5g">5g</button>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="price-sold">
+                                    <span class="product-price">89.000&nbsp;đ</span>
+                                    <span class="product-sold">Đã bán 15.000+</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#product-detail" class="btn-detail" onclick="openDetailModal('Son dưỡng dầu dừa Bến Tre', '89.000 đ', 'images/son-duong-dau-dua.jpg', 'Dầu dừa Bến Tre truyền thống giàu dưỡng chất kết hợp Vitamin E giúp đôi môi luôn hồng hào, mềm mại và căng mọng.'); return false;">Xem chi tiết</a>
+                                    <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ====== FOOTER ====== -->
+        <!-- ====== GỢI Ý COMBO MUA CÙNG ====== -->
+        <section class="products-section section-alt" id="san-pham-moi">
+            <div class="container">
+                <h2>Thường được mua cùng</h2>
+                <p class="section-subtitle">Gợi ý bộ sản phẩm chăm sóc hoàn chỉnh và tiết kiệm</p>
+                <div class="combo-grid">
+                    <div class="combo-card">
+                        <div class="combo-img">
+                            <img src="images/combo-da-dau.jpg" alt="Bộ chăm sóc da dầu mụn toàn diện Cocoon" loading="lazy">
+                        </div>
+                        <h4>Bộ chăm sóc da dầu toàn diện</h4>
+                        <p>Gel rửa mặt bí đao + Nước cân bằng bí đao + Tinh chất phục hồi</p>
+                        <span class="combo-price">Tiết kiệm 15% &ndash; 480.000&nbsp;đ</span>
+                        <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm bộ vào giỏ</button>
+                    </div>
+                    <div class="combo-card">
+                        <div class="combo-img">
+                            <img src="images/combo-travel-kit.jpg" alt="Bộ Travel Kit chăm sóc da mini Cocoon" loading="lazy">
+                        </div>
+                        <h4>Travel Kit – Chăm sóc da du lịch</h4>
+                        <p>5 sản phẩm dung tích mini, tiện lợi mang theo trong mọi hành trình</p>
+                        <span class="combo-price">Chỉ 250.000&nbsp;đ</span>
+                        <button class="btn btn-add-cart" onclick="addToCart(this)">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== GIỚI THIỆU THƯƠNG HIỆU COCOON ====== -->
+        <section class="about-section" id="ve-cocoon">
+            <div class="container">
+                <h2>Về Cocoon Vietnam</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <span class="about-icon">🌱</span>
+                        <h3>100% Thuần Chay</h3>
+                        <p>Nguyên liệu từ thực vật Việt Nam, hoàn toàn không sử dụng thành phần có nguồn gốc động vật.</p>
+                    </div>
+                    <div class="about-card">
+                        <span class="about-icon">🐰</span>
+                        <h3>Cruelty-Free</h3>
+                        <p>Cam kết không thử nghiệm trên động vật, được chứng nhận bởi các tổ chức uy tín quốc tế.</p>
+                    </div>
+                    <div class="about-card">
+                        <span class="about-icon">🇻🇳</span>
+                        <h3>Nguyên Liệu Đặc Sản Việt</h3>
+                        <p>Cà phê Đắk Lắk, bí đao Tây Nguyên, sen Hậu Giang, dầu dừa Bến Tre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== ĐÁNH GIÁ KHÁCH HÀNG ====== -->
+        <section class="reviews-section">
+            <div class="container">
+                <h2>Khách hàng nói gì về Cocoon</h2>
+                <p class="section-subtitle">Đánh giá thực tế từ người dùng &middot; <a href="#viet-danh-gia">Viết đánh giá của bạn</a></p>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Sữa rửa mặt sen rất dịu, da mình thuộc nhóm nhạy cảm không hề bị khô căng sau khi rửa."</p>
+                        <span class="reviewer">— Minh Anh, Da nhạy cảm</span>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Gel tắm bí đao mùi thơm thảo mộc tự nhiên cực kỳ dễ chịu, dùng cả gia đình đều thích."</p>
+                        <span class="reviewer">— Thanh Hà, Mọi loại da</span>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Kem dưỡng cà phê thấm nhanh không bết dính, da mềm mịn và rạng rỡ hẳn sau 1 tuần dùng."</p>
+                        <span class="reviewer">— Thu Trang, Da khô</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====== FOOTER NGỮ NGHĨA ====== -->
     <footer class="site-footer">
         <div class="container footer-inner">
             <div class="footer-col">
@@ -392,32 +421,54 @@
                 <h4>Chính sách</h4>
                 <ul>
                     <li><a href="#">Hướng dẫn mua hàng</a></li>
-                    <li><a href="#">Chính sách đổi trả</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách đổi trả trong 7 ngày</a></li>
+                    <li><a href="#">Chính sách bảo mật thông tin</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Liên hệ</h4>
                 <ul>
-                    <li><a href="#">Zalo</a></li>
-                    <li><a href="#">Messenger</a></li>
+                    <li><a href="#">Tổng đài hỗ trợ: 1900 1234</a></li>
+                    <li><a href="#">Zalo Official Account</a></li>
                     <li><a href="#">Email: info@cocoonvietnam.com</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Nhận khuyến mãi</h4>
+                <h4>Nhận bản tin ưu đãi</h4>
                 <form class="newsletter-form" onsubmit="return false;">
-                    <input type="email" placeholder="Email của bạn">
+                    <input type="email" placeholder="Nhập email của bạn…" aria-label="Địa chỉ email nhận khuyến mãi">
                     <button type="submit" class="btn btn-primary">Đăng ký</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Cocoon Vietnam. Giao diện cải tiến theo khảo sát UX.</p>
+            <p>&copy; 2026 Cocoon Vietnam. Bài tập cá nhân Buổi 2: HTML5 &amp; CSS3 – UEH University.</p>
         </div>
     </footer>
 
-    <!-- ====== JAVASCRIPT (tối thiểu, không dùng thư viện) ====== -->
+    <!-- ====== MODAL XEM CHI TIẾT SẢN PHẨM (TRẢI NGHIỆM TƯƠNG TÁC) ====== -->
+    <div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeDetailModal()" aria-label="Đóng cửa sổ chi tiết">&times;</button>
+            <div class="modal-body">
+                <div class="modal-img-wrap">
+                    <img id="modalProductImg" src="" alt="Ảnh chi tiết sản phẩm">
+                </div>
+                <div class="modal-content">
+                    <span class="badge badge-bestseller">Chi tiết sản phẩm</span>
+                    <h3 id="modalProductName">Tên sản phẩm</h3>
+                    <p class="modal-price" id="modalProductPrice">0 đ</p>
+                    <p class="modal-desc" id="modalProductDesc">Mô tả sản phẩm</p>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" onclick="addModalToCart()">Thêm vào giỏ hàng</button>
+                        <button class="btn btn-secondary" onclick="closeDetailModal()">Đóng lại</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== JAVASCRIPT THUẦN (XỬ LÝ TƯƠNG TÁC) ====== -->
     <script>
         /* --- Mobile menu toggle --- */
         document.getElementById('menuToggle').addEventListener('click', function () {
@@ -451,7 +502,7 @@
             });
         });
 
-        /* --- Thêm vào giỏ: cập nhật số lượng & hiện thông báo --- */
+        /* --- Thêm vào giỏ: cập nhật số lượng & hiện thông báo toast --- */
         var cartCount = 0;
         function addToCart(button) {
             cartCount++;
@@ -461,7 +512,7 @@
             setTimeout(function () { toast.classList.remove('show'); }, 2000);
         }
 
-        /* --- Lọc theo loại da --- */
+        /* --- Lọc sản phẩm theo loại da --- */
         document.getElementById('filterSkin').addEventListener('change', function () {
             var value = this.value;
             document.querySelectorAll('.product-card').forEach(function (card) {
@@ -473,7 +524,7 @@
             });
         });
 
-        /* --- Sắp xếp theo giá / bán chạy --- */
+        /* --- Sắp xếp sản phẩm theo giá / bán chạy --- */
         document.getElementById('sortBy').addEventListener('change', function () {
             var grid = document.querySelector('.products-grid');
             var cards = Array.from(grid.querySelectorAll('.product-card'));
@@ -487,6 +538,39 @@
                 }
             }.bind(this));
             cards.forEach(function (card) { grid.appendChild(card); });
+        });
+
+        /* --- Modal xem chi tiết sản phẩm --- */
+        function openDetailModal(name, price, imgSrc, desc) {
+            document.getElementById('modalProductName').textContent = name;
+            document.getElementById('modalProductPrice').textContent = price;
+            document.getElementById('modalProductImg').src = imgSrc;
+            document.getElementById('modalProductImg').alt = name;
+            document.getElementById('modalProductDesc').textContent = desc;
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+
+        function addModalToCart() {
+            addToCart(null);
+            closeDetailModal();
+        }
+
+        // Đóng modal bằng phím ESC
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeDetailModal();
+            }
+        });
+
+        // Đóng modal khi bấm ra ngoài nền tối
+        document.getElementById('detailModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeDetailModal();
+            }
         });
     </script>
 </body>
