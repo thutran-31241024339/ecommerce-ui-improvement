@@ -21,12 +21,15 @@ Bài tập cá nhân Buổi 2 tiếp tục kế thừa và phát triển sản p
 
 ---
 
-## 2. Website tham khảo & Khu vực trọng tâm cải tiến
+## 2. Website tham khảo & Khu vực trọng tâm: Giao diện Trang chủ Cocoon Vietnam
 
-- **Website tham khảo:** [Cocoon Vietnam](https://cocoonvietnam.com) – Thương hiệu mỹ phẩm 100% thuần chay từ thực vật Việt Nam.
-- **Khu vực lựa chọn làm trọng tâm phát triển:**  
-  1. **Danh sách sản phẩm và thẻ sản phẩm (Product Grid & Product Card):** Đây là khu vực cốt lõi nhất của website TMĐT. Thực hành toàn diện Semantic HTML5 (`<section>`, `<article>`), CSS Grid đa cột, Box Model (padding, border, border-radius, box-shadow), tỉ lệ ảnh vuông 1:1, bộ chọn dung tích (volume selector) và nhóm nút bấm hành động đôi ("Xem chi tiết" và "Thêm vào giỏ").
-  2. **Header và Menu điều hướng (Site Header & Main Nav):** Thực hành Flexbox căn chỉnh dàn hàng ngang, thanh tìm kiếm gợi ý từ khóa và giỏ hàng mini.
+- **Website tham khảo:** [Cocoon Vietnam](https://cocoonvietnam.com) – Thương hiệu mỹ phẩm 100% thuần chay từ nguồn thực vật đặc sản Việt Nam.
+- **Khu vực lựa chọn làm trọng tâm phát triển:** **Toàn bộ Giao diện TRANG CHỦ (Home Page)** kế thừa từ tệp `index.html` của Buổi 1, tập trung hoàn thiện các khu vực chức năng chính:
+  1. **Header và Menu điều hướng Trang chủ:** Căn chỉnh Flexbox giữa logo, menu danh mục, thanh tìm kiếm gợi ý từ khóa và giỏ hàng mini.
+  2. **Hero Banner và Lối vào theo nhu cầu da / tóc:** Giúp phân luồng nhu cầu khách hàng ngay tại đầu Trang chủ.
+  3. **Danh sách sản phẩm bán chạy trọng tâm (Products Grid) trên Trang chủ:** Lưới sản phẩm co giãn CSS Grid, bộ chọn dung tích (volume selector), hình ảnh thật 100% Cocoon và nhóm nút thao tác đôi `.product-actions` (Xem chi tiết + Thêm vào giỏ).
+  4. **Khu vực Combo mua kèm, Về Cocoon và Đánh giá khách hàng trên Trang chủ.**
+  5. **Footer ngữ nghĩa chân Trang chủ.**
 
 ---
 
@@ -208,12 +211,15 @@ ecommerce-ui-improvement/
 
 ### 7.3. Hình ảnh minh chứng giao diện
 
-#### So sánh Trước và Sau cải tiến:
-| Trước khi cải tiến (Buổi 1) | Sau khi hoàn thiện (Buổi 2 - Desktop 1366px) |
+#### 1. So sánh Thẻ sản phẩm Trước và Sau khi cải tiến (Box Model, Flexbox & Ảnh thật):
+![So sánh Thẻ sản phẩm](docs/screenshots/card_before_after_comparison.png)
+
+#### 2. So sánh Toàn bộ Trang chủ Trước và Sau cải tiến:
+| Trang chủ Buổi 1 (Trước cải tiến - Ảnh placeholder, 1 nút đơn) | Trang chủ Buổi 2 (Sau cải tiến - Desktop 1366px) |
 |:---:|:---:|
 | ![Trước cải tiến](docs/screenshots/before_improvement.png) | ![Sau cải tiến](docs/screenshots/after_improvement_desktop_1366.png) |
 
-#### Kiểm tra Responsive trên các thiết bị:
+#### 3. Kiểm tra Responsive Trang chủ trên các thiết bị:
 | Tablet (768px - Lưới 2 cột) | Mobile (390px - Lưới 1 cột) |
 |:---:|:---:|
 | ![Tablet 768px](docs/screenshots/tablet_768.png) | ![Mobile 390px](docs/screenshots/mobile_390.png) |
